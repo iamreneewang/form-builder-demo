@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Builder Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="toolbox">
+      <div class="brand">Form Demo Builder</div>
+
+      <div class="tool-section">
+        <div class="tool-title">Create Questions</div>
+        <button class="tool-btn" data-type="single">Insert Single Choice</button>
+        <button class="tool-btn" data-type="multiple">Insert Multiple Choice</button>
+        <button class="tool-btn" data-type="dropdown">Insert Dropdown</button>
+        <button class="tool-btn" data-type="text">Insert Text</button>
+        <button class="tool-btn" data-type="memo">Insert Memo</button>
+        <button class="tool-btn" data-type="date">Insert Date</button>
+        <button class="tool-btn" data-type="time">Insert Time</button>
+        <button class="tool-btn" data-type="range">Insert Range</button>
+      </div>
+    </aside>
+
+    <main class="canvas-wrap">
+      <section class="paper">
+        <div class="tabbar">
+          <div class="tabs">
+            <button class="tab active" data-tab="builder">Builder</button>
+            <button class="tab" data-tab="preview">Preview</button>
+          </div>
+          <button id="saveBtn" class="save-btn">Save</button>
+        </div>
+
+        <div id="builderTab">
+          <input id="formTitle" class="form-title" value="Customer Safety Inspection Form" />
+          <textarea id="formBody" class="form-body">Please complete all required questions before submitting this form.</textarea>
+
+          <div class="line"></div>
+
+          <div id="questionList" class="question-list"></div>
+
+          <div id="emptyState" class="empty-state">
+            Select a question type from the left panel.
+          </div>
+        </div>
+
+        <div id="previewTab" hidden>
+          <div id="previewContent"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="savePanel" class="save-panel" hidden>
+    <div class="save-panel-head">
+      <strong>Save Payload Preview</strong>
+      <button id="closeSavePanel" class="icon-btn">Close</button>
+    </div>
+    <pre id="saveOutput"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
