@@ -6,6 +6,7 @@ const previewContent = document.getElementById("previewContent");
 const formTitle = document.getElementById("formTitle");
 const formBody = document.getElementById("formBody");
 const saveBtn = document.getElementById("saveBtn");
+const printBtn = document.getElementById("printBtn");
 const savePanel = document.getElementById("savePanel");
 const saveOutput = document.getElementById("saveOutput");
 const closeSavePanel = document.getElementById("closeSavePanel");
@@ -43,6 +44,11 @@ saveBtn.addEventListener("click", () => {
   savePanel.hidden = false;
 });
 
+printBtn.addEventListener("click", () => {
+  renderPreview();
+  window.print();
+});
+
 closeSavePanel.addEventListener("click", () => {
   savePanel.hidden = true;
 });
@@ -54,6 +60,7 @@ function switchTab(tab) {
 
   builderTab.hidden = tab !== "builder";
   previewTab.hidden = tab !== "preview";
+  printBtn.hidden = tab !== "preview";
 
   if (tab === "preview") renderPreview();
 }
